@@ -1,4 +1,4 @@
-package woowacourse.shoppingcart.dao;
+package woowacourse.member.dao;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
-import woowacourse.shoppingcart.domain.member.Member;
+import woowacourse.member.domain.Member;
 
 import javax.sql.DataSource;
 

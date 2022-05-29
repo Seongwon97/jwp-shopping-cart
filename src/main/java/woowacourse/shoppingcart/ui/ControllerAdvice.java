@@ -8,9 +8,9 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import woowacourse.shoppingcart.dto.error.ErrorResponse;
+import woowacourse.error.ErrorResponse;
 import woowacourse.shoppingcart.exception.*;
-import woowacourse.shoppingcart.exception.member.InvalidMemberException;
+import woowacourse.member.exception.InvalidMemberException;
 
 import javax.validation.ConstraintViolationException;
 import java.util.List;
@@ -26,11 +26,6 @@ public class ControllerAdvice {
     @ExceptionHandler(EmptyResultDataAccessException.class)
     public ResponseEntity handle() {
         return ResponseEntity.badRequest().body("존재하지 않는 데이터 요청입니다.");
-    }
-
-    @ExceptionHandler(InvalidMemberException.class)
-    public ResponseEntity<ErrorResponse> handleInvalidMemberException(InvalidMemberException e) {
-        return ResponseEntity.badRequest().body(new ErrorResponse(e.getMessage()));
     }
 
     @ExceptionHandler({MethodArgumentNotValidException.class})

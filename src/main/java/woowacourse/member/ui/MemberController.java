@@ -1,9 +1,9 @@
-package woowacourse.shoppingcart.ui;
+package woowacourse.member.ui;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import woowacourse.shoppingcart.application.MemberService;
-import woowacourse.shoppingcart.dto.member.SignUpRequest;
+import woowacourse.member.application.MemberService;
+import woowacourse.member.dto.SignUpRequest;
 
 @RestController
 @RequestMapping("/api/members")

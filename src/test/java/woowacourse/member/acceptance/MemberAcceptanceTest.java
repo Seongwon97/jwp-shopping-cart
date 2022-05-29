@@ -1,9 +1,11 @@
-package woowacourse.shoppingcart.acceptance;
+package woowacourse.member.acceptance;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
-import woowacourse.shoppingcart.dto.member.SignUpRequest;
+import woowacourse.member.dto.SignUpRequest;
+import woowacourse.acceptance.AcceptanceTest;
+import woowacourse.shoppingcart.acceptance.RestAssuredConvenienceMethod;
 
 @DisplayName("회원 관련 기능")
 public class MemberAcceptanceTest extends AcceptanceTest {

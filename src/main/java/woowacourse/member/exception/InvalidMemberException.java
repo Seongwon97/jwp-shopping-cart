@@ -1,4 +1,4 @@
-package woowacourse.shoppingcart.exception.member;
+package woowacourse.member.exception;
 
 public class InvalidMemberException extends IllegalArgumentException {
 

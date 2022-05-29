@@ -1,4 +1,4 @@
-package woowacourse.shoppingcart.dao;
+package woowacourse.member.dao;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
-import woowacourse.shoppingcart.domain.member.Member;
+import woowacourse.member.domain.Member;
 import woowacourse.shoppingcart.exception.InvalidCustomerException;
 
 import javax.sql.DataSource;

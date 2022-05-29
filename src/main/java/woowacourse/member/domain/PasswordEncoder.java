@@ -1,4 +1,4 @@
-package woowacourse.shoppingcart.domain.member;
+package woowacourse.member.domain;
 
 import woowacourse.shoppingcart.exception.FailedEncryptException;
 

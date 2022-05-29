@@ -1,8 +1,9 @@
-package woowacourse.shoppingcart.domain.member;
+package woowacourse.member.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import woowacourse.shoppingcart.exception.member.InvalidMemberException;
+import woowacourse.member.domain.Member;
+import woowacourse.member.exception.InvalidMemberException;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 

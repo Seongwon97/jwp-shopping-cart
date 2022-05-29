@@ -1,11 +1,11 @@
-package woowacourse.shoppingcart.application;
+package woowacourse.member.application;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import woowacourse.shoppingcart.dao.MemberDao;
-import woowacourse.shoppingcart.domain.member.Member;
-import woowacourse.shoppingcart.dto.member.SignUpRequest;
-import woowacourse.shoppingcart.exception.member.InvalidMemberException;
+import woowacourse.member.dao.MemberDao;
+import woowacourse.member.domain.Member;
+import woowacourse.member.dto.SignUpRequest;
+import woowacourse.member.exception.InvalidMemberException;
 
 @Service
 @Transactional
