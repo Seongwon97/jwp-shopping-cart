@@ -16,6 +16,18 @@ public class Member {
         this.password = new Password(password);
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password.getValue();
+    }
+
     private void validateEmailForm(String email) {
         if (!email.contains("@")) {
             throw new InvalidMemberException("올바르지 못한 이메일 형식입니다.");
