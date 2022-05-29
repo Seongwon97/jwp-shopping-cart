@@ -1,7 +1,5 @@
 package woowacourse.shoppingcart.domain.member;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import woowacourse.shoppingcart.exception.member.InvalidMemberException;
 
 import java.util.regex.Pattern;
@@ -11,13 +9,11 @@ public class Password {
     private static final Pattern casePattern = Pattern.compile("(?=.*?[a-z])(?=.*?[A-Z])");
     private static final Pattern specialCharacterPattern = Pattern.compile("(?=.*?[!@?-])");
 
-    private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
     private final String value;
 
     public Password(String value) {
         validate(value);
-        this.value = passwordEncoder.encode(value);
+        this.value = PasswordEncoder.encrypt(value);
     }
 
     public String getValue() {
