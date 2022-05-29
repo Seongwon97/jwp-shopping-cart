@@ -7,7 +7,7 @@ import woowacourse.error.ErrorResponse;
 import woowacourse.member.exception.InvalidMemberException;
 
 @RestControllerAdvice
-public class ControllerAdvice {
+public class MemberControllerAdvice {
 
     @ExceptionHandler(InvalidMemberException.class)
     public ResponseEntity<ErrorResponse> handleInvalidMemberException(InvalidMemberException e) {

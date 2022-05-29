@@ -8,15 +8,13 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import woowacourse.error.ErrorResponse;
 import woowacourse.shoppingcart.exception.*;
-import woowacourse.member.exception.InvalidMemberException;
 
 import javax.validation.ConstraintViolationException;
 import java.util.List;
 
 @RestControllerAdvice
-public class ControllerAdvice {
+public class ShoppingCartControllerAdvice {
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity handleUnhandledException() {
