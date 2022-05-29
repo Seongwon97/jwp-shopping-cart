@@ -1,0 +1,41 @@
+package woowacourse.shoppingcart.domain.member;
+
+import woowacourse.shoppingcart.exception.member.InvalidMemberException;
+
+public class Member {
+
+    private final String email;
+    private final String name;
+    private final Password password;
+
+    public Member(String email, String name, String password) {
+        validateEmailForm(email);
+        validateName(name);
+        this.email = email;
+        this.name = name;
+        this.password = new Password(password);
+    }
+
+    private void validateEmailForm(String email) {
+        if (!email.contains("@")) {
+            throw new InvalidMemberException("올바르지 못한 이메일 형식입니다.");
+        }
+    }
+
+    private void validateName(String name) {
+        validateNameLength(name);
+        validateNameContainSpace(name);
+    }
+
+    private void validateNameLength(String name) {
+        if (name.length() > 10) {
+            throw new InvalidMemberException("이름은 10자 이하이어야 합니다.");
+        }
+    }
+
+    private void validateNameContainSpace(String name) {
+        if (name.contains(" ")) {
+            throw new InvalidMemberException("이름에 공백이 포함될 수 없습니다.");
+        }
+    }
+}
