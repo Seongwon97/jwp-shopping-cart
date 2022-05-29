@@ -3,7 +3,7 @@ package woowacourse.shoppingcart.domain;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import woowacourse.shoppingcart.domain.member.Password;
-import woowacourse.shoppingcart.exception.member.InvalidPasswordException;
+import woowacourse.shoppingcart.exception.member.InvalidMemberException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -14,7 +14,7 @@ public class PasswordTest {
     @Test
     void lessThenSixLetters() {
         assertThatThrownBy(() -> new Password("Wtc1!"))
-                .isInstanceOf(InvalidPasswordException.class)
+                .isInstanceOf(InvalidMemberException.class)
                 .hasMessageContaining("비밀번호는 6글자 이상이어야 합니다.");
     }
 
@@ -22,7 +22,7 @@ public class PasswordTest {
     @Test
     void containsCase() {
         assertThatThrownBy(() -> new Password("wooteco!"))
-                .isInstanceOf(InvalidPasswordException.class)
+                .isInstanceOf(InvalidMemberException.class)
                 .hasMessageContaining("비밀번호는 대소문자를 포함해야 합니다.");
     }
 
@@ -30,7 +30,7 @@ public class PasswordTest {
     @Test
     void containsSpecialCharacters() {
         assertThatThrownBy(() -> new Password("Wooteco"))
-                .isInstanceOf(InvalidPasswordException.class)
+                .isInstanceOf(InvalidMemberException.class)
                 .hasMessageContaining("비밀번호는 특수문자(!,@,?,-)를 포함해야 합니다");
     }
 
