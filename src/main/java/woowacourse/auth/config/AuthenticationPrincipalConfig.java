@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import woowacourse.auth.application.AuthService;
 import woowacourse.auth.ui.AuthenticationPrincipalArgumentResolver;
+import woowacourse.auth.ui.CORSInterceptor;
 import woowacourse.auth.ui.TokenInterceptor;
 
 import java.util.List;
@@ -25,7 +26,12 @@ public class AuthenticationPrincipalConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new TokenInterceptor(authService)).addPathPatterns("/api/members/me/**");
+        registry.addInterceptor(new TokenInterceptor(authService))
+                .addPathPatterns("/api/members/me/**");
+        registry.addInterceptor(new CORSInterceptor())
+                .addPathPatterns("/api/**")
+                .excludePathPatterns("/api/auth")
+                .excludePathPatterns("/api/members");
     }
 
     @Override
