@@ -28,10 +28,6 @@ public class AuthenticationPrincipalConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new TokenInterceptor(authService))
                 .addPathPatterns("/api/members/me/**");
-        registry.addInterceptor(new CORSInterceptor())
-                .addPathPatterns("/api/**")
-                .excludePathPatterns("/api/auth")
-                .excludePathPatterns("/api/members");
     }
 
     @Override
