@@ -8,6 +8,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import woowacourse.globalException.dto.ErrorResponse;
 import woowacourse.shoppingcart.exception.InvalidCartItemException;
 import woowacourse.shoppingcart.exception.InvalidOrderException;
 import woowacourse.shoppingcart.exception.InvalidProductException;
@@ -20,8 +21,8 @@ import java.util.List;
 public class ControllerAdvice {
 
     @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity handleUnhandledException() {
-        return ResponseEntity.badRequest().body("Unhandled Exception");
+    public ResponseEntity<ErrorResponse> handleUnhandledException(RuntimeException e) {
+        return ResponseEntity.badRequest().body(new ErrorResponse(e.getMessage()));
     }
 
     @ExceptionHandler(EmptyResultDataAccessException.class)
